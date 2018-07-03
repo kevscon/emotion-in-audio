@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>My Webpage</title>
+  <style>
+
+    h1{
+      font-family: helvetica;
+    }
+    h2{
+      font-family: cursive;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    span{
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      font-size: 18px;
+    }
+    img {
+      width:7%;
+      height:7%;
+    }
+    a:link, a:visited {
+      background-color: #800000;
+      color: white;
+      padding: 14px 25px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    a:hover, a:active {
+      background-color: #800000;
+    }
+
+  </style>
+</head>
+
+<body class ="display" style ="background-image: linear-gradient(to right, #ADA996, #F2F2F2, #FFFFFF, #DBDBDB, #EAEAEA); background-position: initial initial; background-repeat: initial initial;">
+
+  <center><h1>The Resonance of Emotion</h1></center>
+  <center><h2>{{emo}}</h2></center>
+  <center><img src={{image}}></center>
+
+  <br>
+
+    <span>
+      <center>
+        <table border = "1" cellpadding = "5" cellspacing = "5">
+          <tr>
+            <th align = "center">
+              Emotion
+            </th>
+            <th align = "center">
+              Probability
+            </th>
+          </tr>
+          {% for f in predictions %}
+          <tr>
+            <td align = "center">
+              {{ f[0] }}
+            </td>
+            <td align = "center">
+              {{ f[1] | int }}%
+            </td>
+          </tr>
+          {% endfor %}
+        </table>
+      </center>
+
+
+  <br>
+  <center><a href="http://127.0.0.1:5000">Upload audio file</a></center>
+  <span>
+
+
+
+</body>
+
+</html>
